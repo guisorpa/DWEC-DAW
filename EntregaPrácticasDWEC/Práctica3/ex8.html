@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function rebaja(precio, porcentaje) {
+        var rebajaFinal = (precio * porcentaje)/100;
+        var precioFinal = precio - rebajaFinal;
+        document.write("<h1> Tu precio final es " + precioFinal + "</h1>");
+    }
+      var pre = prompt("Introduce el precio de tu producto");
+      var preci = parseInt(pre);
+      var reba = prompt("Introduce la rebaja. Porcentaje");
+      var rebaj = parseInt(reba);
+      if(preci <=0 || typeof(preci) != "number"){
+        alert("Tu número no cumple los requisitos.");
+      }
+     else if(rebaj <=0 || rebaj >100 || typeof(rebaj) != "number"){
+        alert("Tu rebaja no cumple los requisitos.");
+      }else{
+        rebaja(preci, rebaj);
+      }
+    </script>
+  </body>
+</html>

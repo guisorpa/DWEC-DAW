@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var fecha = prompt("Escribe tu año de nacimiento");
+      var d = new Date();
+      var n = d.getFullYear();
+      if((n - fecha) < 18 ){
+        alert("Eres menor de edad! Sal de aquí!");
+      }else if((n - fecha) >= 18 ){
+        alert("Bienvenido, pasa a nuestra web.");
+      }
+    </script>
+  </body>
+</html>

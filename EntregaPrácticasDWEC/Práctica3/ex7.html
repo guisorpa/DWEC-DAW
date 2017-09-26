@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var fecha = new Date();
+      var dia  = fecha.getDay();
+
+      switch (dia){
+        case 0:
+            alert("Estás a domingo, tu fin de semana acaba, y te quedan 6 días para el próximo fin de semana.");
+            break;
+        case 1:
+            alert("Estás a lunes,  te quedan 5 días para el próximo fin de semana.");
+            break;
+        case 2:
+            alert("Estás a martes, te quedan 4 días para el próximo fin de semana.");
+            break;
+        case 3:
+            alert("Estás a miércoles, te quedan 3 días para el próximo fin de semana.");
+            break;
+        case 4:
+            alert("Estás a jueves, y te quedan 2 días para el próximo fin de semana.");
+            break;
+        case 5:
+            alert("Estás a viernes, y te quedan 1 día para el próximo fin de semana.");
+            break;
+        case 6:
+            alert("Estás a sábado, tu fin de semana acaba, y ya estás en fin de semana.");
+            break;
+
+      }
+    </script>
+  </body>
+</html>
