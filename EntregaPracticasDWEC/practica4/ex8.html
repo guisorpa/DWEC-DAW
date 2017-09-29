@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+     function cocatena(v1, v2){
+       if(typeof(v1 == "string") && typeof(v2 == "string")){
+          var v3 = v1 + " " + v2;
+         return v3;
+       }else{
+         document.write("Tus valores no son strings.");
+       }
+     }
+     function saludar(){
+       var x =  prompt("Introduce tu nombre");
+        var y =  prompt("Introduce tu apellido");
+        var fin = cocatena(x,y);
+        document.write("Buenos días " + fin);
+     }
+     saludar();
+    </script>
+  </body>
+</html>

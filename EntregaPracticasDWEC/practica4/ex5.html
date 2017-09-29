@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Calculadora(){
+        var x = prompt("Introduce tu valor");
+        var y = prompt("Introduce tu segundo valor");
+
+       if(typeof(x) != "number"|| typeof(y) != "number" || y == "Infinity" || x == "Infinity"){
+         document.write("Error. Uno de tus valores no es un número");
+       }else{
+         var v1 = parseInt(x);
+         var v2 = parseInt(y);
+          var op = prompt("sumar, restar, multiplicar o dividir");
+
+          if(op == "sumar"){
+            var v3 = v1 + v2;
+            document.write(v3);
+          }else if (op == "restar") {
+            var v3 = v1 - v2;
+            document.write(v3);
+          }else if (op == "multiplicar") {
+            var v3 = v1 * v2;
+            document.write(v3);
+          }else if (op == "dividir") {
+            var v3 = v1 / v2;
+            document.write(v3);
+          }
+
+        }
+
+
+      }
+      Calculadora();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+      function mostrar(semana){
+
+        for(var i in semana){
+          document.write("<br> " + semana[i] + " <br>");
+        }
+
+      }
+      function pedir(semana){
+        var dia= prompt("Introduce el número de la semana del 0 al 6") || 4;
+        var g = parseInt(dia);
+
+        if(g <0 || g >= 7){
+          document.write("<br>No has elegido un dia de la semana.<br>");
+        }else if(isNaN(g)){
+          document.write("no es un número");
+        }else if(g == "Infinity"){
+          document.write("Es infinito tu valor");
+        }
+        else{
+          document.write("<br> Tu día es el " + semana[g]);
+        }
+      }
+      mostrar(diasSemana);
+      pedir(diasSemana);
+    </script>
+  </body>
+</html>
