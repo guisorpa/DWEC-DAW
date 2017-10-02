@@ -1,0 +1,53 @@
+
+*{
+  font-family: "Times new roman";
+}
+header h1{
+  color: blue;
+  font-weight: 36px;
+}
+article h1{
+  color: orange;
+}
+article p:nth-child(2){
+  background-color: #ffff00;
+
+}
+
+b.destacado {
+  color: red;
+  font-style: oblique;
+}
+#japo{
+  color: pink;
+  font-size: 24px;
+}
+i{
+  color: green;
+  font-family: "Courier New";
+  font-style: normal;
+  font-weight: bold;
+}
+p span{
+  color: blue;
+}
+article p:nth-child(4){
+  background-color: #ffff00;
+}
+span.destacado{
+  color: navy;
+  font-weight: bold;
+}
+.imagen p{
+  background-color: #ffff00;
+}
+footer span{
+  color: red;
+}
+footer a span{
+   color: green;
+}
+footer a:hover span{
+   color: grey;
+   font-weight: bold;
+}
