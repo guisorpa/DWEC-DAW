@@ -18,7 +18,7 @@
         var dia= prompt("Introduce el número de la semana del 0 al 6") || 4;
         var g = parseInt(dia);
 
-        if(g <0 || g >= 7){
+        if(g <=0 || g > 7){
           document.write("<br>No has elegido un dia de la semana.<br>");
         }else if(isNaN(g)){
           document.write("no es un número");

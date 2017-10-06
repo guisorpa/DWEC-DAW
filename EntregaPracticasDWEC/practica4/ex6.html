@@ -9,16 +9,21 @@
       var vector = [33, "vida", true, false, 47, 58, "extra", 8, true, 10];
       var i;
       for( i = 0; i < vector.length; i++){
-          document.write(" Vector1 posición de i " + i + " contenido del array = " + vector[i] + " Tipo de dato " + typeof(vector[i]) + " <br>");
+          document.write(" Vector1 posición de i " + i + " contenido del array = " + vector[i] + " Tipo de dato " + typeof(vector[i]) +  "<br> ");
       }
+      document.write(" ---- Longitud array -> "+ vector.length);
       document.write("<br>Empieza la conversión <br>")
       var v2 = [];
-       for(i = 0; i < vector.length; i++){
-         if(!isNaN(vector[i])){
-           v2[i] = Number(vector[i]);
+      var j = 0;
 
-          document.write("<br> Vector2 posición de i " + i + " contenido del array = " + v2[i] + " Tipo de dato " + typeof(v2[i]) + " <br>");
-         }
+
+       for(i = 0; i < vector.length; i++){
+          if(!isNaN(vector[i])){
+             v2[j] = Number(vector[i]);
+            
+             document.write("<br> Vector2 posición " + j + " contenido del array = " + v2[j] + " Tipo de dato " + typeof(v2[j]) + " <br>");
+              j++;
+          }
        }
     </script>
   </body>

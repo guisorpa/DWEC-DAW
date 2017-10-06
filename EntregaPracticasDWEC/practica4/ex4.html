@@ -8,29 +8,29 @@
     <script type="text/javascript">
       var cadena1 = "hi";
       var cadena2 = "yes";
-      function Tamaño(cad1,cad2){
+      function Tamano(cad1,cad2){
         if(typeof(cad1) !== "string" || typeof(cad2) !== "string"){
-          document.write("ERROR");
+          console.error("ERROR");
 
         }else{
           if(cad1.length > cad2.length){
-            document.write("Cad1 tiene mayor longitud: " + cad1.length);
+            console.log("Cad1 tiene mayor longitud: " + cad1.length);
           }else if (cad1.length < cad2.length) {
-            document.write("Cad2 tiene mayor longitud: " + cad2.length);
+            console.log("Cad2 tiene mayor longitud: " + cad2.length);
           }else{
-            document.write("Tienen la misma longitud, cad1 " + cad1.length + " cad2 " + cad2.length);
+            console.log("Tienen la misma longitud, cad1 " + cad1.length + " cad2 " + cad2.length);
           }
         }
 
       }
-        Tamaño(cadena1, cadena2);
+        Tamano(cadena1, cadena2);
         cadena1 = false;
         cadena2 = "ea";
-        Tamaño(cadena1, cadena2);
+        Tamano(cadena1, cadena2);
         cadena1 = "buenos dias";
         cadena2 = "ea";
 
-        Tamaño(cadena1, cadena2);
+        Tamano(cadena1, cadena2);
 
     </script>
   </body>

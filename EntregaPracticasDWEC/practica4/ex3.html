@@ -7,12 +7,21 @@
   <body>
     <script type="text/javascript">
     var MayorEdad = function(){
+
+
       var ed = prompt("Que edad tienes?");
       var edad = parseInt(ed);
-      stMayor = "<ul><li>Coca Cola, 3€</li><li>Café, 5€</li><li>Martini, 9€</li><li>Whisky, 20€</li></ul>";
-      stMenor = "<ul><li>Coca Cola, 3€</li><li>Café, 5€</li></ul>";
-      (edad >= 18)?document.write(stMayor):document.write(stMenor);
-    
+      var MayorEdad = function(num){
+        stMayor = "<ul><li>Coca Cola, 3€</li><li>Café, 5€</li><li>Martini, 9€</li><li>Whisky, 20€</li></ul>";
+        stMenor = "<ul><li>Coca Cola, 3€</li><li>Café, 5€</li></ul>";
+
+        if(num >=18){
+          document.write(stMayor);
+
+        }else{
+          document.write(stMenor);
+        }
+      }
     }
 
     MayorEdad();
