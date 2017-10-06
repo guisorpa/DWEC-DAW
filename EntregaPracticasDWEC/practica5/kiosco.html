@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="kiosco.css">
+
+  </head>
+  <body>
+    <script type="text/javascript">
+      function generarSurtido(){
+        var kiosco = ["Revista","Boli","Pipas","Juguetes","Chuches","Caramelos","Periodico","Libretas","Cometas", "Helados","Tabaco"];
+        return kiosco;
+      }
+      function consultaPrecios(indice){
+        var precios = [1,0.75,0.20,3,0.50,1.20,0.90,2,20,1,5];
+
+        return precios[indice];
+      }
+      function mostrarSurtidoPrecio(surtido,precios){
+
+        document.write("<table cellspacing = 0px;> <tr> ");
+        for(var i = 0; i< precios.length;i++){
+          if(precios[i] > 0){
+              // <img src="revistas.png" alt="revistas">
+            document.write("<td ><img width='100px' height='100px' src='" + surtido[i] + ".jpg' alt='" + surtido[i] + "'>   </td>");
+          }
+        }
+        document.write("</tr><tr> ");
+        for(var i = 0; i< precios.length;i++){
+          if(precios[i] > 0){
+
+            document.write("<td> " + precios[i] + " €</td>");
+          }
+        }
+        document.write("</tr></table>");
+
+
+
+      }
+
+      function fot(){
+        document.write("a");
+      }
+
+      function mostrarTodo(){
+        var j = generarSurtido();
+        var precios = [1,0.75,0.20,3,0.50,1.20,0.90,2,20,1,5];
+        mostrarSurtidoPrecio(j,precios);
+      }
+
+      function mostrar(){
+        var j = generarSurtido();
+        var precios = [1,0.75,0.20,3,0.50,1.20,0.90,2,20,1,5];
+        document.write("<table cellspacing = 0px;> <tr> ");
+        for(var i = 0; i< precios.length;i++){
+          if(precios[i] > 0){
+              // <img src="revistas.png" alt="revistas">
+            console.log(document.write("<td><img width='100px' height='100px' src='" + j[i] + ".jpg' alt='" + j[i] + "' onclick='mostrarTodo()'>   </td>"));
+          }
+        }
+          document.write("</tr></table>");
+          document.write("<button onclick='mostrarTodo()'> Ver precios</button>");
+      }
+
+
+    </script>
+    <h1>¿Quieres conocer nuestro surtido?<br>Pulsa sobre la imagen</h1>
+    <img onclick="mostrar()" id="foto"src="kiosko.jpg" alt="kiosco">
+
+  </body>
+</html>

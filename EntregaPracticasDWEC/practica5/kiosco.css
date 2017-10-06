@@ -1,0 +1,17 @@
+table {
+border: 1px solid;
+}
+
+td{
+border: 0.2px solid;
+}
+
+img#foto{
+	width: 500px;
+	height: 500px;
+	display:block;
+	margin:auto;
+}
+h1{
+text-align: center;
+}
