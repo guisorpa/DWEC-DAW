@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dado</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function saltar(){
+        window.location.reload();
+        var f = Math.floor(Math.random() * 6)+ 1;
+
+
+          document.write("  <img width = '400px' height = '400px'  src='dado" + f + ".jpg' alt='dado1'>");
+          document.write("<button onclick='saltar()'> Vuelve a intentarlo</button>");
+
+      }
+    </script>
+    <button onclick="saltar()">Dale para lanzar el dado</button>
+  </body>
+</html>
