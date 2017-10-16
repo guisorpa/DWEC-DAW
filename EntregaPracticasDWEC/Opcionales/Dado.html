@@ -9,13 +9,13 @@
       function saltar(){
         window.location.reload();
         var f = Math.floor(Math.random() * 6)+ 1;
+        document.write("  <img width = '400px' height = '400px'  src='dado" + f + ".jpg' alt='dado' >");
+        document.write("<button onclick='saltar()'> Vuelve a intentarlo</button>");
 
 
-          return f;
 
       }
-      document.write("  <img width = '400px' height = '400px'  src='dado" + saltar() + ".jpg' alt='dado'>");
-      document.write("<button onclick='saltar()'> Vuelve a intentarlo</button>");
+
     </script>
     <button onclick="saltar()">Dale para lanzar el dado</button>
   </body>
