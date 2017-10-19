@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Persona(nombre,apellidos){
+        this.nombre = nombre || "Anonymus";
+        this.apellidos = apellidos;
+        this.saludar = function(){
+          console.log("Hola me llamo " + this.nombre + this.apellidos);
+
+        }
+      }
+        //Ejercicio 5-B
+        Persona.prototype.edad = Math.floor(Math.random()* 100) - 1;
+        //Ejercicio 5-C
+        Persona.prototype.cumplirAnyio = function(){
+        this.edad = this.edad + 1;
+        }
+
+
+      var pers1 = new Persona("Pepe","Hernandez");
+
+      var pers2 =  new Persona("Manolo","Viyuela");
+
+
+      console.log("pers1 es instancia de Persona? " + (pers1 instanceof Persona));
+      console.log("pers2 es instancia de Persona? " + (pers2 instanceof Persona));
+      document.write(Object.keys(pers1));
+      document.write(Object.keys(pers2));
+      pers1.saludar();
+      pers2.saludar();
+
+      //Empieza el ejercicio 5
+      pers1.telefono = "963548215";
+
+      console.log("Edad persona sin sumar " + pers1.edad + "<br>");
+      pers1.cumplirAnyio();
+      console.log("Edad persona sumando 1 -- " + pers1.edad + "<br>");
+
+      //Empieza el ejercicio 6
+      function Estudiante(nombre, apellidos, estudios, notaMedia){
+        Persona.call(this,nombre, apellidos);
+        this.estudios = estudios;
+        this.notaMedia = notaMedia;
+
+        this.recuperar = function(){
+          if(this.notaMedia < 5){
+            this.notaMedia = 5;
+          }
+        }
+      }
+        //Ejercicio 10
+
+        Estudiante.prototype.password = "";
+        Estudiante.prototype.crearPassword = function(){
+          var pass = "";
+          pass = this.nombre.charAt(0);
+          var apellido = this.apellidos.split(" ");
+          var x = apellido[0].toLowerCase();
+          x = x.replace("e", "3");
+          x = x.replace("a", "4");
+          x = x.concat(this.nombre.length);
+          pass = pass.concat(x);
+          return pass;
+        }
+
+      var lista = new Array(3);
+      var nota = prompt("nota alumno1?");
+      var nota2 = prompt("nota alumno2?");
+      var nota3 = prompt("nota alumno3?");
+      nota = parseInt(nota);
+      nota2 = parseInt(nota2);
+      nota3 = parseInt(nota3);
+      var alumno1 = new Estudiante("Blanca","Nuñez Peréz", "Eso", nota);
+      var alumno2 = new Estudiante("Juanita","Gomez Olmo", "bachiller", nota2);
+      var alumno3 = new Estudiante("Ana","Soriano Gracia", "Master", nota3);
+      console.log("Nota media del alumno1: " + alumno1.notaMedia);
+      alumno1.notaMedia = alumno1.notaMedia.toFixed(2);
+      console.log("Nota media del alumno1 redondeada: " + alumno1.notaMedia);
+      alumno1.recuperar();
+      console.log("Nota media del alumno1 Recuperada: " + alumno1.notaMedia);
+      console.log(alumno1);
+       lista[0] = alumno1;
+       lista[1] = alumno2;
+       lista[2] = alumno3;
+       for(var i = 0; i < 3; i++){
+         console.log("Nombre: " + lista[i].nombre +  " Apellidos: " + lista[i].apellidos+ " Edad: " + lista[i].edad + " Estudios: " + lista[i].estudios+ " Nota: " + lista[i].notaMedia);
+       }
+       //Ejercicio 9
+       document.write("<br>Ejercicio 9 <br>");
+       var apellido;
+       for(var i = 0; i < 3; i++){
+         apellido = lista[i].apellidos.split(" ");
+         document.write("Nombre: " + lista[i].nombre + "; Primer Apellido: " + apellido[0] + "; Segundo Apellido: " + apellido[1] + "<br>");
+       }
+
+       //Ejercicio 10 Muestra por Pantalla
+       document.write("<br>Ejercicio10<br>")
+      for(var i = 0; i < 3; i++){
+        lista[i].password = lista[i].crearPassword();
+        document.write("<br>Password: " + lista[i].password);
+      }
+
+    </script>
+  </body>
+</html>

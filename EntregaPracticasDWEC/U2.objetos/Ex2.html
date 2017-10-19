@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+
+      var cochePrimero = new Object();
+      cochePrimero.Marca = "Renault";
+      cochePrimero.Ruedas = 4;
+      cochePrimero.Color = "Dorado";
+      cochePrimero.Plazas = 2;
+      cochePrimero.cambiarColor = function(){
+       color="Blanco"
+     }
+
+      var cocheSegundo = new Object();
+      cocheSegundo.Marca = "ford";
+      cocheSegundo.Ruedas = 4;
+      cocheSegundo.Color = "Gris";
+      cocheSegundo.Plazas = 5;
+      cocheSegundo.cambiarColor = function(){
+       color="Blanco"
+      }
+
+      console.log("Borro Plazas");
+      delete cochePrimero.Plazas;
+
+      console.log("Muestro cochePrimero");
+      console.log(Object.keys(cochePrimero));
+      console.log("Muestro cocheSegundo")
+      console.log(Object.keys(cocheSegundo));
+
+    </script>
+  </body>
+</html>

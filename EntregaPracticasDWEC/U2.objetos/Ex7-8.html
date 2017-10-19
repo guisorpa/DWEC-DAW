@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //Ejercicio 7
+      var frase = "Esto es un string";
+      document.write(frase + "<br>")
+      document.write("Longitud del string; " + frase.length);
+      document.write("<br>Carácter en la posición 7: " + frase.charAt(7));
+      document.write("<br>El indice en el que está la última t es: " + frase.lastIndexOf("t"));
+      document.write("<br>Minúsculas: " + frase.toLowerCase());
+      document.write("<br>Mayúsculas: " + frase.toUpperCase());
+      document.write("<br>Palabras separadas por comas: " + frase.split(" "));
+      document.write("<br>Posiciones de la 11 a la 18: " + frase.slice(11,18) + "<br><br><br>");
+
+      //Ejercicio 8
+      var frase1 = " y con esto es un string más largo";
+      frase1 = frase1.trim();
+      var fraseCompleta = frase.concat(frase1);
+      document.write("Esta es la frase concatenada: " + fraseCompleta);
+      document.write("<br>Antes de cambiar 'largo' por 'bonito': " + frase1);
+      frase1 = frase1.replace("largo", "bonito");
+      document.write("<br>Después de cambiar 'largo' por 'bonito': "+ frase1);
+      var excla = "¡";
+      excla = excla.repeat(20);
+      frase1 = frase1.concat(excla);
+
+      document.write("<br>" + frase1);
+
+
+
+
+    </script>
+  </body>
+</html>
