@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    div{
+      margin-top: 10px;
+    }
+    div.pie{
+      border: 1px solid black;
+      font-style: italic;
+      padding: 5px;
+    }
+    div.sexo label{
+      width: 80px;
+    }
+    label.mujer{
+      margin-left: 75px;
+    }
+    div label{
+      width: 11%;
+      float: left;
+    }
+    input{
+      border-radius: 5px;
+    }
+    input:focus{
+      outline: none;
+      border: 1px solid violet;
+      background-color: grey;
+    }
+    input[radio]{
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+    textarea{
+      overflow: scroll;
+      height: 40px;
+    }
+    .cambio{
+    height: 25px;
+    }
+    .cambio2{
+      width: 145px;
+    }
+    </style>
+  </head>
+  <body>
+    <form  action="index.html" method="post">
+    <fieldset><legend>Inscripción</legend>
+      <fieldset>
+        <legend>Información personal</legend>
+        <div>
+          <label for="nombre">Nombre*:
+          </label>
+          <input type="text" name="nombre" value="" id="nombre" autofocus="autofocus" placeholder="Introduce tu nombre" required="required"><br>
+        </div>
+        <div>
+          <label for="ape">Apellidos*: </label>
+          <input type="text" name="apellido" value="" id="ape" required="required"placeholder="Introduce tus apellidos">
+        </div>
+        <div>
+          <label for="email">Email*: </label>
+          <input type="email" name="apellido" value="" id="email" required="required">
+        </div>
+        <div class="sexo">
+           <label>Sexo:</label>
+           <label for="varon" >Hombre <input type="radio" name="sexo" id="varon"></label>
+           <label class="mujer"for="hembra">Mujer<input type="radio" name="sexo" id="hembra"></label><br>
+        </div>
+        <div>
+          <label for="fecha">Fecha nacimiento*:</label>
+          <input type="date" name="fecha" requiered="required" id="fecha" placeholder="dd/mm/aaaa">
+        </div>
+        <div>
+          <label for="pro">Provincia:</label>
+          <select class="" name="">
+            <option id ="pro" value="escoge" selected="selected">Escoge provincia</option>
+            <option value="vlc">Valencia</option>
+            <option value="cast">Castellon</option>
+            <option value="ali">Alicante</option>
+          </select>
+        </div>
+        <div>
+          <label for="pobl">Población: </label>
+          <input class="cambio" type="email" name="apellido" value="" id="pobl">
+        </div>
+        <div>
+          <label for="tlf">Teléfono:</label>
+          <input class="cambio2"type="tel" name="" value="" id="tlf">
+        </div>
+        <div>
+          <p>Motivo inscripción <br>
+          <textarea name="desc" cols="100" ></textarea></p>
+        </div>
+        <div>
+          Escoge el color de tu avatar
+          <input type="color" name="" value="">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Creación de usuario</legend>
+        <div>
+          <label for="nomusu">Nombre de usuario*:</label>
+          <input  class="cambio"  type="text" name="nombre" value="" id="nomusu"  required="required" size="15" placeholder="Ej: Pepe89"><br>
+        </div>
+        <div>
+          <label for="pass">Contraseña*:</label>
+          <input type="password" name="contraseña" value="" id="pass" required="required" maxlength="8" size="10"><br>
+        </div>
+        <div>
+          <label for="passRep">Repite Contraseña*:</label>
+          <input type="password" name="contraseña" value="" id="passRep" required="required" maxlength="8" size="10"><br>
+        </div>
+      </fieldset>
+      <input type="checkbox" name="" value="">Deseo recibir copias de los mensajes del foro en mi correo electrónico <br>
+      <input type="checkbox" name="" value="">Deseo recibir notificaciones de próximos  eventos en mi correo electrónico <br>
+      <input type="submit" name="" value="Confirmar registro">
+      <div class="pie">
+        Nota: los campos marcados con "* son obligatorios."
+      </div>
+
+     </fieldset>
+    </form>
+  </body>
+</html>

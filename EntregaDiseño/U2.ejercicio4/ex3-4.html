@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      ul{
+        list-style: none;
+
+        border: 1px solid grey;
+        width: 180px;
+        padding: 0px;
+        margin: 0px;
+      }
+      li{
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+      }
+      li a{
+        text-decoration: none;
+        color: black;
+        padding: 5px 0px 5px 15px;
+        display: block;
+      }
+      li ul{
+        display: none;
+        list-style: square;
+        color: green;
+        width: 154px;
+        padding-left: 25px;
+        margin: auto;
+        border-top: 0px;
+
+      }
+      .sub:hover{
+        background-color: lightgrey;
+        color: green;
+        background-image: url("flecha.png") ;
+        background-repeat: no-repeat;
+        background-size: 15px;
+        padding-left: 15px;
+        background-position: left;
+
+      }
+
+      li:hover ul{
+        display:block;
+
+      }
+
+    </style>
+  </head>
+  <body>
+<ul>
+  <li><a href="#" class="sub">Elemento 1</a>
+    <ul >
+      <li><a href="#">Submenú 1.1</a></li>
+      <li><a href="#">Submenú 1.2</a></li>
+      <li><a href="#">Submenú 1.3</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Elemento 2</a></li>
+  <li><a href="#">Elemento 3</a></li>
+  <li><a href="#" class="sub">Elemento 4</a>
+    <ul>
+      <li><a href="#">Submenú 4.1</a></li>
+      <li><a href="#">Submenú 4.2</a></li>
+      <li><a href="#">Submenú 4.3</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Elemento 5</a></li>
+  <li><a href="#">Elemento 6</a></li>
+</ul>
+  </body>
+</html>
