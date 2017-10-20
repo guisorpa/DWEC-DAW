@@ -6,6 +6,60 @@
 
   </head>
   <body>
-    <script src="Producto.jss" charset="utf-8"></script>
+    <script type="text/javascript">
+      function Producto(codigo, nombre , ingredientes){
+        this.codigo = codigo;
+        this.nombre = nombre;
+        var pre = Math.floor(Math.random()* 3) + 1;
+        this.precio = pre.toFixed(2);
+        var x = [];
+        for(var i = 0; i < ingredientes.length;i++){
+          x[i] = ingredientes[i].toLowerCase();
+
+        }
+        x = x.sort();
+
+
+        this.ingredientes = x;
+
+        this.imprimeDatos = function(){
+          document.write("Código: " + this.codigo + "<br>Nombre: " + this.nombre + "<br>Precio: " +  this.precio  + "<br>");
+
+
+        }
+      }
+      Producto.prototype.borraIngredientes = function(){
+          this.ingredientes.splice(this.ingredientes.length -1, this.ingredientes.length -1);
+          console.log(this.ingredientes);
+      }
+      Producto.prototype.buscaInfo = function(){
+         window.open("https://www.google.es/search?q=" + this.nombre);
+
+
+      }
+      Producto.prototype.verIngredientes = function(){
+        var ventana = window.open();
+        ventana.document.write(this.ingredientes+ "<hr><button onclick=window.close()>Cerrar ventana</button>");
+
+      }
+      var ingredien = ['cacahuetes', 'romero', 'pimienta', 'canela'];
+      var lista = [];
+      lista[0] = new Producto("1","Especias", ingredien);
+      ingredien1 = ['Harina', 'Agua', 'Aceite'];
+      lista[1] = new Producto("2","Pan", ingredien1);
+      ingredien2 = ['cacao', 'avellanas', 'azucar', 'leche'];
+      lista[2] = new Producto("3","Nocilla", ingredien2);
+      for(var i = 0; i < lista.length;i++){
+        lista[i].imprimeDatos();
+        document.write('<button onclick="lista[' + i + '].verIngredientes()">Ver Ingredientes</button><button onclick="lista[' + i + '].borraIngredientes()">Eliminar Ingrediente</button><button onclick="lista[' + i + '].buscaInfo()">Más información</button><br>');
+      }
+
+
+
+    </script>
+
+    <!-- <button onclick="produ.verIngredientes()">Ver Ingredientes</button>
+    <button onclick="produ.borraIngredientes()">Eliminar Ingrediente</button>
+    <button onclick="produ.buscaInfo()">Más información</button> -->
   </body>
 </html>
