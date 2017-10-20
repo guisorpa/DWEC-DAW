@@ -61,8 +61,10 @@
           pass = this.nombre.charAt(0);
           var apellido = this.apellidos.split(" ");
           var x = apellido[0].toLowerCase();
-          x = x.replace("e", "3");
-          x = x.replace("a", "4");
+          while(x.search("e") >= 0 || x.search("a") >= 0){
+            x = x.replace("e", "3");
+            x = x.replace("a", "4");
+          }
           x = x.concat(this.nombre.length);
           pass = pass.concat(x);
           return pass;
@@ -75,7 +77,7 @@
       nota = parseInt(nota);
       nota2 = parseInt(nota2);
       nota3 = parseInt(nota3);
-      var alumno1 = new Estudiante("Blanca","Nuñez Peréz", "Eso", nota);
+      var alumno1 = new Estudiante("Blanca","Perez Nuñez", "Eso", nota);
       var alumno2 = new Estudiante("Juanita","Gomez Olmo", "bachiller", nota2);
       var alumno3 = new Estudiante("Ana","Soriano Gracia", "Master", nota3);
       console.log("Nota media del alumno1: " + alumno1.notaMedia);
