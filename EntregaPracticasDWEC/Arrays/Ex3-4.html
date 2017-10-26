@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var v = ["hola", true, 2, "Días"];
+      console.log(v);
+      v.push("Melocotón");
+      v.push(false);
+      console.log(v);
+
+      v.unshift("ESTE");
+      v.unshift("Primero");
+      console.log(v);
+
+      v.splice(3,3);
+      console.log(v);
+      v.splice(3,0, 10, 25);
+      console.log(v);
+      console.log(v.join("==>"));
+
+      var v2 = v.reverse();
+
+
+      console.log("Este es v " + v);
+      console.log("Este es v2 " + v2);
+
+      //Muestra los dos arrays (directamente, sin join() ni toString()).
+      //¿Puedes explicar qué ha pasado con los dos arrays y por qué?
+      // RESPUESTA: Lo que pasa es que v y v2, apuntan a la misma dirección de memoria,
+      // entonces si cambio v, también se cambia v2.
+
+      function buscarNum(num){
+        return 25 == num;
+      }
+
+      console.log("Posición en la que está 25: " + v.indexOf(v.find(buscarNum)));
+      // console.log("Posición en la que está otro valor del array: " + v.indexOf(v.find(1000)));
+
+
+      //Ejercicio 4
+
+      console.log(v.every(function(num){
+        return isNaN(num) !== true;
+      }));
+      console.log(v.some(function(n){
+        return n < 20;
+      }));
+      var a = [4, 21, 33, 12, 9, 54];
+      function calcularTotal(suma,valor){
+          return suma + valor;
+      }
+
+      console.log(a.reduce(calcularTotal));
+
+    </script>
+  </body>
+</html>

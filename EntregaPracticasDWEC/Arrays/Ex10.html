@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function marcarHora(){
+      var fechaActual = new Date();
+      var hora = fechaActual.toLocaleTimeString();
+      return console.log(hora);
+    }
+    var intervalo = setInterval(marcarHora, 5000);
+
+
+    </script>
+    <button onclick = "setInterval(marcarHora, 5000)">Empezar</button>
+    <button onclick="clearInterval(intervalo)">Parar</button>
+  </body>
+</html>

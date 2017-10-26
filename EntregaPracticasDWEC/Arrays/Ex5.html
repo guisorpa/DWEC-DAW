@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Persona(nombre,apellidos){
+        this.nombre = nombre || "Anonymus";
+        this.apellidos = apellidos;
+        this.saludar = function(){
+          console.log("Hola me llamo " + this.nombre + this.apellidos);
+
+        }
+      }
+      function Estudiante(nombre, apellidos, estudios, notaMedia){
+        Persona.call(this,nombre, apellidos);
+        this.estudios = estudios;
+        this.notaMedia = notaMedia;
+        this.recuperar = function(){
+          if(this.notaMedia < 5){
+            this.notaMedia = 5;
+          }
+        }
+      }
+      var clase = [];
+      clase[0] = new Estudiante("Guillermo", "Pérez", "Master", 9);
+      clase[1] = new Estudiante("Pepito", "Tambor", "Ninguno", 2);
+      clase[2] = new Estudiante("Juanito", "Garrido", "Bachiller", 10);
+        //orden original según notas
+        for(var i = 0; i < clase.length; i++){
+          console.log(clase[i].nombre + " " + clase[i].notaMedia);
+        }
+        //orden al ordenarlo
+       clase.sort(function(elemento1,elemento2){
+         return elemento1.notaMedia-elemento2.notaMedia;
+       });
+       for(var i = 0; i < clase.length; i++){
+         console.log(clase[i].nombre + " " + clase[i].notaMedia);
+       }
+
+
+    </script>
+  </body>
+</html>

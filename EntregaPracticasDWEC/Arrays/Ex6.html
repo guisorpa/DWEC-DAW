@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var v = [2, true,"palabra", "idea", false, 6, 10, "Clase"];
+    console.log(v.map(function(n){
+      return Number(n);
+    }))
+    console.log(v.filter(function(n){
+      return isNaN(n) == false;
+    }))
+
+
+    </script>
+  </body>
+</html>
