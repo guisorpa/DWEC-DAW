@@ -24,4 +24,7 @@ function Usuario(prod){
     }
 
   }
+  this.mostrarComprar = function(){
+    
+  }
 }
