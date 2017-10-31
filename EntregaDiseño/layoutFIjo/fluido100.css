@@ -1,0 +1,143 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+}
+body{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+header {
+    width:100%;
+    height: 70px;
+    background-color: lightblue;
+    display: table;
+    padding: 10px;
+    position: fixed;
+
+}
+header h1 {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  background-color:lightblue;
+  padding-left: 5px;
+  font: bold 36px Helvetica;
+
+}
+nav.arriba{
+  display: table-cell;
+  vertical-align: top;
+  text-align: right;
+
+}
+nav.arriba li{
+  background-color: steelblue;
+  color: white;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  text-align: right;
+}
+nav.arriba ul.arriba{
+  list-style: none;
+  float: right;
+  text-align: right;
+}
+ul.arriba li:hover{
+  text-decoration: underline;
+}
+.contenedor{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+  padding-top: 110px;
+  margin-bottom: auto;
+}
+section{
+  flex: 1;
+}
+.hora{
+  color: lightgrey;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.entrada{
+  margin-top: 5px;
+  border: 5px solid lightgrey;
+  width: 73%;
+  padding: 1%;
+  background: linen;
+  display: table-cell;
+  margin-top: 5px;
+}
+.entrada h1{
+  font: bold 24px Verdana;
+}
+.entrada h2{
+  font:bold 14px Verdana;
+}
+.entradaDos{
+  margin: auto;
+  padding: 10px;
+  background: linen;
+  display: table-cell;
+  margin-top: 5px;
+  border: 5px solid lightgrey;
+  width: 73%;
+}
+.entradaDos h1{
+  font: bold 24px Verdana;
+}
+.entradaDos h2{
+  font:bold 14px Verdana;
+}
+.blog{
+  width: 150px;
+  height: 100px;
+}
+.logo img{
+  display: table-cell;
+  width: 8%;
+  height: 8%;
+}
+.comen{
+  text-align: right;
+}
+
+aside ul{
+  background-color: lightgrey;
+  list-style: none;
+  padding: 2% 0px 2% 2%;
+  width: 20%;
+  float:right;
+  text-align: left;
+}
+aside li:hover{
+  color: linen;
+}
+li ul{
+  display:none;
+
+}
+li:hover ul{
+  width: 19%;
+  display:block;
+  margin-left: 6%;
+  padding-left: 2%;
+  color:black;
+}
+footer{
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+}
+hr{
+  width:100%;
+}
