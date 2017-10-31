@@ -99,13 +99,13 @@ section{
   font:bold 14px Verdana;
 }
 .blog{
-  width: 150px;
-  height: 100px;
+  width: 15%;
+  height: 10%;
 }
 .logo img{
   display: table-cell;
-  width: 8%;
-  height: 8%;
+  width: 80px;
+  height: 80px;
 }
 .comen{
   text-align: right;
