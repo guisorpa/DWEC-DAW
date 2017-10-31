@@ -17,3 +17,6 @@ function verPorPrecioMenos(p){
 function verVegano(){
   p.dibujarSurtido(p.ordenarVegano());
 }
+function condCompraOnline(){
+  
+}
