@@ -24,7 +24,28 @@ function Usuario(prod){
     }
 
   }
-  this.mostrarComprar = function(){
-    
+  this.mostrarComprar = function(prod){
+    var str = "";
+    if(produ == undefined){
+      for(var i = 0; i< this.compra.length;i++){
+        str += "<div>";
+        str += "<img src='" + this.compra[i].foto + "' alt='";
+        str += this.compra[i].nombre + "'>";
+        str += "<p>Producto: " + this.compra[i].nombre + " </p>";
+        str += "<p>Descripción: " + this.compra[i].descripcion + " </p>";
+        str += "<p><b>Prrecio: " + this.compra[i].precio + " €</b></p>";
+        str += "</div>";
+      }
+    }else{
+      for(var i = 0; i < produ.length; i++){
+        str += "<div>";
+        str += "<img src='" + produ[i].foto + "' alt='";
+        str += produ[i].nombre + "'>";
+        str += "<p>Producto: " + produ[i].nombre + " </p>";
+        str += "<p>Descripción: " + produ[i].descripcion + " </p>";
+        str += "<p><b>Prrecio: " + produ[i].precio + " €</b></p>";
+        str += "</div>";
+      }
+    }
   }
 }
