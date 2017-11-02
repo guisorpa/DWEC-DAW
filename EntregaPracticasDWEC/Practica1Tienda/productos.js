@@ -41,4 +41,18 @@ var productos = [
     precio: 5.30,
     vegano: true
   }
+  {
+    nombre:'Azucar',
+    descripcion: 'Azucar de Colombia. Paquete 454g',
+    foto:'https://www.hipercor.es/sgfm/SGFM/00/16/5/0200430500165/0200430500165000g01011.jpg',
+    precio: 1.30,
+    vegano: true
+  }
+  {
+    nombre:'Fanta',
+    descripcion: 'Bote de Fanta de naranja. 33cl',
+    foto:'https://cestado.com/Imagenes/Productos/g_IMGA00001005595.jpg',
+    precio: 0.60,
+    vegano: true
+  }
 ];
