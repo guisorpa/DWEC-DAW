@@ -7,9 +7,14 @@ function Usuario(prod){
 
   this.eliminarCompra = function(){
     if(this.compra.length > 0){
+      if(this.compra.length == 1){
+        cuerpo.innerHTML = "";
+        this.importe = 0;
+      }
      this.compra.pop();
     }else{
-      alert("No tienes compra.")
+      alert("No tienes compra.");
+
     }
   }
   this.calcularImporte = function(){
@@ -47,6 +52,7 @@ function Usuario(prod){
         str += "</div>";
       }
     }
-    cuerpo.innerHTML = str;
+    cuerpo.innerHTML = str + "<hr>" + "<b>" + this.importe + "€</b>";
+
   }
 }

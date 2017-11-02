@@ -11,6 +11,7 @@ function eliminar(){
   us1.eliminarCompra();
   us1.calcularImporte();
   us1.mostrarComprar();
+
 }
 function hacerPedido(us){
   if(us1.compra.indexOf(0) == -1){
