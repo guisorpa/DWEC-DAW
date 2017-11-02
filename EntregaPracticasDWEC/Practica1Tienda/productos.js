@@ -56,3 +56,49 @@ var productos = [
     vegano: true
   }
 ];
+var compra = [
+  {
+    nombre:'Camiseta',
+    descripcion: 'Camiseta 100% algodón en colores oscuros',
+    foto:'http://www.regalosfrikis.com/wp-content/uploads/2014/08/regalos-frikis-camiseta-soy-informatico.jpg',
+    precio: 15,
+    vegano: true
+  },
+  {
+    nombre:'Pescado',
+    descripcion: 'Salmón fresco. Envase de 500gr.',
+    foto:'http://adiochiropracticclinic.com/wp-content/uploads/sites/39/2016/02/omega3.jpg',
+    precio: 8,
+    vegano: false
+  },
+  {
+    nombre:'Cerveza',
+    descripcion: 'Cerveza coronita de 35cl. Importada de Méjico',
+    foto:'http://akipan.es/wp-content/uploads/2016/05/coronita.jpg',
+    precio: 2.80,
+    vegano: true
+  },
+
+  {
+    nombre:'Zapatos',
+    descripcion: 'Zapatos color camel de piel con suela reforzada.',
+    foto:'https://static.kiabi.es/images/botines-chelsea-de-piel-sintetica-camello-tallas-grandes-hombre-wd108_2_lpr1.jpg',
+    precio: 40,
+    vegano: false
+  },
+
+  {
+    nombre:'Azucar',
+    descripcion: 'Azucar de Colombia. Paquete 454g',
+    foto:'https://www.hipercor.es/sgfm/SGFM/00/16/5/0200430500165/0200430500165000g01011.jpg',
+    precio: 1.30,
+    vegano: true
+  }
+  {
+    nombre:'Fanta',
+    descripcion: 'Bote de Fanta de naranja. 33cl',
+    foto:'https://cestado.com/Imagenes/Productos/g_IMGA00001005595.jpg',
+    precio: 0.60,
+    vegano: true
+  }
+];
