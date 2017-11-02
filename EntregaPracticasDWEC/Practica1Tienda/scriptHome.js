@@ -18,5 +18,5 @@ function verVegano(){
   p.dibujarSurtido(p.ordenarVegano());
 }
 function condCompraOnline(){
-  
+  var v = window.open("", "_blank", "width=400, height=400");
 }
