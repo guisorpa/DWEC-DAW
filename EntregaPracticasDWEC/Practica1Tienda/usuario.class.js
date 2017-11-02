@@ -1,5 +1,5 @@
 function Usuario(prod){
-  this.id = Math.floor(Math.Random() * 1000)+1;
+  this.id = Math.floor(Math.random() * 1000)+1;
   this.idioma = navigator.language;
   this.navegador = navigator.userAgent;
   this.compra = prod;
@@ -7,8 +7,7 @@ function Usuario(prod){
 
   this.eliminarCompra = function(){
     if(this.compra.length > 0){
-      delete this.compra[length];
-
+     this.compra.pop();
     }else{
       alert("No tienes compra.")
     }
@@ -24,7 +23,8 @@ function Usuario(prod){
     }
 
   }
-  this.mostrarComprar = function(prod){
+  this.mostrarComprar = function(produ){
+    cuerpo.innerHTML = "";
     var str = "";
     if(produ == undefined){
       for(var i = 0; i< this.compra.length;i++){
@@ -47,5 +47,6 @@ function Usuario(prod){
         str += "</div>";
       }
     }
+    cuerpo.innerHTML = str;
   }
 }
