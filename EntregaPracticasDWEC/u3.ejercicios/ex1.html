@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej Hola mundo hecho con nodos DOM</title>
+    </head>
+  <body>
+    <h1> Esto es un título</h1>
+    <p>Esto es un ejemplo </p>
+    <div> Esto es un div</div>
+    <!--Comentario-->
+  </body>
+  <script type="text/javascript">
+    var textH = "Esto es el nuevo h1";
+    var textP ="Esto es el nuevo texto";
+    var textDiv = "Esto es el nuevo Div";
+    document.body.children[0].innerHTML = textH;
+    document.body.children[1].innerHTML = textP;
+    document.body.children[2].innerHTML = textDiv;
+
+
+    console.log(document.body.children);
+
+     document.title = "Nuevo titulo!";
+     document.body.style.color = "blue";
+     console.log(document.body.childNodes);
+     console.log(document.body.children);
+
+  </script>
+
+</html>

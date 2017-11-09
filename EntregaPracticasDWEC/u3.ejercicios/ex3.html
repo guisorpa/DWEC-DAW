@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ex3</title>
+  </head>
+  <body>
+    <div id="contiene_ps">
+      <p>?</p>
+      <p>?</p>
+      <p>?</p>
+      <p>?</p>
+      <p>?</p>
+      <p>?</p>
+      <div id="cambiame">
+        <input type="color" id="txtColor" value="#FF0000">
+        <button id="actualizar" onclick="recorreTag();">Modificar los párrafos!</button>
+        </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var misP = document.getElementsByTagName("p");
+    for(var i = 0; i < misP.length;i++){
+       misP[i].innerHTML = "Este parrafo es el número " + (i+1);
+    }
+    function recorreTag(){
+      var co = document.getElementById("txtColor");
+
+      for(var i = 0; i < misP.length;i++){
+         misP[i].style.color = co.value;
+      }
+
+    }
+
+  </script>
+</html>
