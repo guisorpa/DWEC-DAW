@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de la compra</title>
+
+  </head>
+  <body>
+    <h1>Lista de la compra</h1>
+    <div>
+      <input type="text" name="texto" id="texto">
+      <select name="Eselector" id="selector">
+        <option value=0>Escoge una opción</option>
+        <option value="navy">Pescaderia</option>
+        <option value="red">Carnicería</option>
+        <option value="green">Verduras</option>
+        <option value="cyan">Congelados</option>
+        <option value="gold">Panadería</option>
+        <option value="magenta">Perfumeria</option>
+      </select>
+      <button onclick="añadirElemento()">Añadir Elemento</button>
+      <button onclick="borrarLista()">Borrar Lista</button>
+      <hr>
+    </div>
+    <script type="text/javascript">
+
+      function añadirElemento(){
+        var txt = document.getElementsByTagName("input")[0];
+        if (txt.value == "") {
+
+        }else{
+          var miP = document.createElement("p");
+
+          var selec = document.getElementById("selector");
+          var caja = document.createTextNode(txt.value);
+
+          if(selec.value == 0){
+
+          }else{
+            miP.appendChild(caja);
+            document.body.appendChild(miP);
+            miP.style.color = selector.value;
+            miP.setAttribute("onclick", "borrarElemento()");
+          }
+        }
+
+      }
+      function borrarLista(){
+        var selec = document.getElementsByTagName('p');
+        var tamaño = selec.length;
+        for(var i = 0; i < tamaño; i++){
+          // selec[i].remove();
+           document.body.removeChild(selec[0]);
+        }
+
+      }
+      function borrarElemento(){
+        var fuera = document.querySelector("p:hover");
+        fuera.remove();
+      }
+    </script>
+  </body>
+</html>
