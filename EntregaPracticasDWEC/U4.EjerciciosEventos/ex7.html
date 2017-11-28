@@ -19,9 +19,8 @@
       }
 
       function enseñar(e) {
-       var txt = '';
-       txt = "Tecla con codigo: " + e.charCode + " La cual es -->" + String.fromCharCode(e.charCode) + "<hr>";
-       newP.innerHTML += txt;
+       
+       newP.innerHTML = "Tecla con codigo: " + e.charCode + " La cual es -->" + String.fromCharCode(e.charCode) + "<hr>";
       }
 
       function enseñarEspecial(e) {
