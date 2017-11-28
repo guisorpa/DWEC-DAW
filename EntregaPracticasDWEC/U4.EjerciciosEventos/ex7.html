@@ -20,12 +20,12 @@
 
       function enseñar(e) {
 
-       newP.innerHTML = "Tecla con codigo: " + e.charCode + " La cual es -->" + String.fromCharCode(e.charCode) + "<hr>";
+       newP.innerHTML = "Tecla con codigo: " + e.keyCode + " La cual es -->" + String.fromCharCode(e.charCode) + "<hr>";
       }
 
       function enseñarEspecial(e) {
        if (tecla){
-         console.log( e.keyCode + " la cual es -->" + e.key + "<hr>");
+         console.log(e.keyCode + " la cual es -->" + e.key + "<hr>");
        }
       }
 
