@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+    onload = function(){
+
+      divi.oncontextmenu = function(e){
+        e.preventDefault();
+        divi.innerHTML="Fuera lo anterior!";
+      }
+    h11.onclick = function(e){
+        e.target.innerHTML="El texto fue modificado!";
+      }
+      var miP=document.getElementsByTagName('p')[0];
+
+      miP.addEventListener("mousedown",function(){
+      miP.innerHTML="El texto ha cambiado!";
+      });
+    }
+
+    function cambiar(e){
+      e.innerHTML="Ya no es el mismo texto!";
+    }
+    </script>
+  </head>
+  <body>
+    <p id="parra">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div id="divi">
+      Este es el div
+    </div>
+    <h1 id="h11">Este es el h1</h1>
+    <h2 id="h22" onmouseover = "this.textContent = 'CAMBIO DE TEXTO YA.'">Este es el h2</h2>
+    <h3 id="h33" onmouseenter = "cambiar(this)">Este es el h3</h3>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="miP"></p>
+    <script type="text/javascript">
+      window.onresize = function(){
+        console.log("Anchura: " + window.outerWidth + " Altura: " + window.outerHeight);
+        miP.innerHTML = "Anchura: " + window.outerWidth + " Altura: " + window.outerHeight;
+      }
+    </script>
+
+  </body>
+</html>

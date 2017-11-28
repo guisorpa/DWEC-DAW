@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id="miP">Este texto va a cambiar a mayúsuclas y a minúsculas</p>
+    <script type="text/javascript">
+    var i = 0;
+     addEventListener("DOMContentLoaded", function(){
+      onkeyup = modificar;
+       function modificar(e) {
+        if(e.key=="Shift" && i%2==0){
+          miP.style.textTransform= "uppercase";
+          i++;
+        }else{
+          miP.style.textTransform= "lowercase";
+          i++;
+        }
+      }
+
+     });
+    </script>
+  </body>
+</html>

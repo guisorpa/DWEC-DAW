@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <img src="foto1.jpg" id="imagen" width="150px">
+    </div>
+
+
+    <script type="text/javascript">
+    addEventListener("DOMContentLoaded", function(){
+    onkeypress = function(e){
+
+      if(e.key=="+"){
+        if(imagen.width<1000){
+          imagen.width +=25;
+        }else if(imagen.width==1000){
+          imagen.width+=24
+        }
+      }
+      if(e.key=="-"){
+        if(imagen.width==1024){
+          imagen.width -=24;
+        }else if(imagen.width>150){
+          imagen.width -=25;
+        }
+      }
+    }
+
+
+
+
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+        text-align: center;
+
+      }
+      img{
+        padding-top:25px;
+        padding-bottom: 25px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <img id="imagen" src="foto1.jpg" width="200" height="200">
+    </div>
+
+    <select id="selector" name="Elegir">
+      <option value="1" selected = "selected">Foto1</option>
+      <option value="2">Foto2</option>
+      <option value="3">Foto3</option>
+      <option value="4">Foto4</option>
+    </select>
+    <script type="text/javascript">
+    onload =  function(){
+    selector.addEventListener("change",cambiar);
+      function cambiar() {
+        var nuevaFoto = selector.value;
+        imagen.src = "foto" + selector.value + ".jpg"
+      }
+    }
+    </script>
+  </body>
+</html>

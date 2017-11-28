@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    onload = function() {
+       onkeydown = ense;
+       onkeypress = enseñar;
+       onkeyup = enseñarEspecial;
+      }
+
+      var tecla;
+
+      function ense(e){
+      tecla = e.altKey || e.ctrlKey || e.shiftKey || e.metaKey;
+      }
+
+      function enseñar(e) {
+       var txt = '';
+       txt = "Tecla con codigo: " + e.charCode + " La cual es -->" + String.fromCharCode(e.charCode) + "<hr>";
+       newP.innerHTML += txt;
+      }
+
+      function enseñarEspecial(e) {
+       if (tecla){
+         var text = '';
+         text = "Especial " + e.keyCode + " la cual es -->" + e.key + "<hr>";
+         console.log("Especial: " + text);
+       }
+      }
+
+    </script>
+    <p id="newP"></p>
+  </body>
+</html>
