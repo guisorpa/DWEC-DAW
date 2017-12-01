@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Escoge tu regalo!</title>
+
+
+    <style media="screen">
+    *, .contenedor{
+          text-align: center;
+
+    }
+    img{
+      width: 300px;
+    }
+    p{
+      width: 100px;
+      height: 100px;
+    }
+    div div{
+      width: 300px;
+      height: 400px;
+      background-color: grey;
+      text-align: center;
+      display:inline-block;
+      padding: 10px;
+      margin:10px;
+      font-size: 50px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Escoge tu regalo!</h1>
+    <p class="p1"></p>
+    <p class="p2"></p>
+    <p class="p3"></p>
+    <div class="contenedor">
+      <div id="midiv1">?</div>
+      <div id="midiv2">?</div>
+      <div id="midiv3">?</div>
+    </div>
+    <script type="text/javascript">
+
+
+
+
+      // p1.oncontextmenu = function(e){
+      //   p1.preventDefault();
+      //   p1.innerHTML="Condúcelo";
+      // }
+      // p2.oncontextmenu = function(e){
+      //   p2.preventDefault();
+      //   p2.innerHTML="Superhéroe!";
+      // }
+      // p3.oncontextmenu = function(e){
+      //   p3.preventDefault();
+      //   p3.innerHTML="Adoptado";
+      // }
+
+    midiv1.addEventListener("click",cambiar1);
+    function cambiar1(e){
+      var imagen1 = document.createElement("img");
+      imagen1.setAttribute("src", "foto1.jpg");
+      imagen1.style.width="300px";
+      midiv1.appendChild(imagen1);
+      alert("Tu premio es un coche");
+      midiv2.removeEventListener("click",cambiar2);
+      midiv3.removeEventListener("click",cambiar3);
+        midiv2.addEventListener("click",function(){alert("Tu premio es un coche");});
+        midiv3.addEventListener("click",function(){alert("Tu premio es un coche");});
+    }
+    midiv2.addEventListener("click",cambiar2);
+    function cambiar2(e){
+      var imagen2 = document.createElement("img");
+      imagen2.setAttribute("src", "foto2.jpg");
+      imagen2.style.width="300px";
+      alert("Tu premio es ultrapotato");
+      midiv2.appendChild(imagen2);
+      midiv1.removeEventListener("click",cambiar1);
+      midiv3.removeEventListener("click",cambiar3);
+      midiv1.addEventListener("click",function(){alert("Tu premio es ultrapotato");});
+      midiv3.addEventListener("click",function(){alert("Tu premio es ultrapotato");});
+
+    }
+    midiv3.addEventListener("click",cambiar3);
+    function cambiar3(e){
+      var imagen3 = document.createElement("img");
+      imagen3.setAttribute("src", "foto3.jpg");
+      imagen3.style.width="300px";
+      alert("Tu premio son unas gafas");
+      midiv3.appendChild(imagen3);
+      midiv2.removeEventListener("click",cambiar2);
+      midiv1.removeEventListener("click",cambiar1);
+      midiv2.addEventListener("click",function(){alert("Tu premio son unas gafas");});
+      midiv1.addEventListener("click",function(){alert("Tu premio son unas gafas");});
+    }
+    </script>
+  </body>
+</html>
