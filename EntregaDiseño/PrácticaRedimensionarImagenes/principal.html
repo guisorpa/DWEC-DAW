@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Incluir en icono de favoritos -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <title>Landing</title>
+    <style media="screen">
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+
+    }
+    body{
+      font-family: 'Volkhov',serif;
+      text-align: center;
+      align-items: center;
+      background-color:lightgrey;
+    }
+
+    img{
+      border-radius:20px;
+    }
+    .cabecera{
+      height:100px;
+      padding: 5px 10px;
+      display: table;
+      margin:inherit;
+      height: 20%;
+    }
+    .titulo{
+      display: table-cell;
+      padding-left: 10px;
+      float:left;
+      height: 100px;
+      vertical-align: middle;
+      text-align: center;
+    }
+    h1{
+      padding-top: 30px;
+      padding-left: 5px;
+
+    }
+    .logo{
+    margin-left: 10px;
+
+    width: 200px;
+    height: 100px;
+    float:left;
+    display: table-cell;
+    padding-right: 5px; `
+    }
+    .cuerpo{
+      margin-left:auto;
+      margin-right: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+      height: 60%;
+    }
+
+    .fotoGrande{
+      width: 100%;
+      height: 300px;
+    }
+    .formal{
+      font-size: 16px;
+    }
+    .pContacto{
+      text-align: left;
+      padding-left: 10px;
+      padding-top: 3px;
+      padding-left: 5px;
+    }
+    .logoEmail{
+      float: left;
+      height:8%;
+      width:8%;
+    }
+    .logotlf{
+      float: left;
+      padding-top: 2px;
+      height:8%;
+      width:8%;
+    }
+    .pContacto{
+      margin:15px;
+    }
+    .conocenos{
+        text-align: center;
+        display:table-cell;
+    }
+    .contacto{
+      display:table-cell;
+    }
+    h3{
+      vertical-align: middle;
+      padding:10px;
+    }
+    .cono{
+      height:10%;
+      width:10%;
+      border-radius: 100px;
+      margin-top: -9px;
+    }
+    .pie{
+      position:sticky;
+      bottom: 0;
+      width: 100%;
+      height: 20%;
+      margin:0px;
+      clear: both;
+      padding-bottom: 5px;
+      display:table;
+
+    }
+
+    [class *= "col-"] {
+      float: left;
+    }
+    /********** Dispositivos extra grandes (XL) **********/
+    @media (min-width: 1200px) {
+      .col-xl-1 { width: 8.33%;}
+      .col-xl-2 { width: 16.66%;}
+      .col-xl-3 { width: 25%;}
+      .col-xl-4 { width: 33.33%;}
+      .col-xl-5 { width: 41.66%;}
+      .col-xl-6 { width: 50%;}
+      .col-xl-7 { width: 58.33%;}
+      .col-xl-8 { width: 66.66%;}
+      .col-xl-9 { width: 75%;}
+      .col-xl-10 { width: 83.33%;}
+      .col-xl-11 { width: 91.66%;}
+      .col-xl-12 { width: 100%;}
+      .logo{
+        width: 7%;
+      }
+    }
+
+    /********** Dispositivos grandes (LG) **********/
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .col-lg-1 { width: 8.33%;}
+      .col-lg-2 { width: 16.66%;}
+      .col-lg-3 { width: 25%;}
+      .col-lg-4 { width: 33.33%;}
+      .col-lg-5 { width: 41.66%;}
+      .col-lg-6 { width: 50%;}
+      .col-lg-7 { width: 58.33%;}
+      .col-lg-8 { width: 66.66%;}
+      .col-lg-9 { width: 75%;}
+      .col-lg-10 { width: 83.33%;}
+      .col-lg-11 { width: 91.66%;}
+      .col-lg-12 { width: 100%;}
+    }
+    /********** Dispositivos grandes (MD) **********/
+    @media (min-width: 768px) and (max-width: 991px) {
+
+      .col-md-1 { width: 8.33%;}
+      .col-md-2 { width: 16.66%;}
+      .col-md-3 { width: 25%;}
+      .col-md-4 { width: 33.33%;}
+      .col-md-5 { width: 41.66%;}
+      .col-md-6 { width: 50%;}
+      .col-md-7 { width: 58.33%;}
+      .col-md-8 { width: 66.66%;}
+      .col-md-9 { width: 75%;}
+      .col-md-10 { width: 83.33%;}
+      .col-md-11 { width: 91.66%;}
+      .col-md-12 { width: 100%;}
+    }
+    @media (min-width: 576px) and (max-width: 767px) {
+      .col-sm-1 { width: 8.33%;}
+      .col-sm-2 { width: 16.66%;}
+      .col-sm-3 { width: 25%;}
+      .col-sm-4 { width: 33.33%;}
+      .col-sm-5 { width: 41.66%;}
+      .col-sm-6 { width: 50%;}
+      .col-sm-7 { width: 58.33%;}
+      .col-sm-8 { width: 66.66%;}
+      .col-sm-9 { width: 75%;}
+      .col-sm-10 { width: 83.33%;}
+      .col-sm-11 { width: 91.66%;}
+      .col-sm-12 { width: 100%;}
+    }
+    @media (max-width: 575px) {
+      .col-xs-1 { width: 8.33%;}
+      .col-xs-2 { width: 16.66%;}
+      .col-xs-3 { width: 25%;}
+      .col-xs-4 { width: 33.33%;}
+      .col-xs-5 { width: 41.66%;}
+      .col-xs-6 { width: 50%;}
+      .col-xs-7 { width: 58.33%;}
+      .col-xs-8 { width: 66.66%;}
+      .col-xs-9 { width: 75%;}
+      .col-xs-10 { width: 83.33%;}
+      .col-xs-11 { width: 91.66%;}
+      .col-xs-12 { width: 100%;}
+      .none-xs{
+        display: none;
+      }
+      .logo{
+        width:13%;
+        height:13%;
+        margin:5%;
+        margin-top: 7%;
+        margin-left: 7%;
+        margin-right: -2%;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="cabecera col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <picture>
+              <!-- <source media="(min-width: 1200px)" srcset="logo.svg">
+              <source media="(min-width: 768px)" srcset="logo.svg">
+              <source media="(min-width: 0px)" srcset="logo.svg"> -->
+
+              <img class="logo" src="logo.svg" alt="imagen">
+            </picture>
+            <h1 class="titulo">Food & Company</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="cuerpo col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <img class="fotoGrande" src="maiz.jpg" alt="fotoGrande">
+            <div class="txt">
+               Food & Company, fundada en 1555 por el general Kentucky, es una súper cadena de restaurantes de pan con patatas. Nuestros campos de trigo son cuidados
+               por monjes, los cuáles hacen que brillen y luzcan como verdaderas estrellas. Nuestras patatas son cultivadas en tierras
+               vírgenes y mimadas como lo haría tu abuela. Prueba a pedir nuestro Pan with potato chips, es delicioso y bajo en grasa!
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="pie">
+            <div class="conocenos col-xl-5 col-lg-5 col-md-7 col-sm-7 col-xs-12">
+              <p class="formal"><h2>Conócenos</h2></p>
+              <img class="cono" src="ody.jpg" alt="cono">
+              <div class="txt">
+                Buenas tardes, soy Ody, el dueño de Food & Company, te invito a que me conozcas y pueda ayudarte en todo los posible.
+              </div>
+            </div>
+
+            <div class="contacto offset-xl-3 offset-lg-3 col-xl-4 col-lg-4 col-md-4 col-sm-5 col-xs-12">
+
+                <p class="formal"><h2>Contacta con nosotros</h2></p>
+                <div >
+                  <picture>
+                    <source media="(min-width: XXXpx)" srcset="imagen/grande.png">
+                    <source media="(min-width: XXXpx)" srcset="imagen/mediano.png">
+                    <source media="(min-width: XXXpx)" srcset="imagen/pequeño.png">
+                               <!-- img para cargar la imagen del elemento source -->
+                    <img class="logoEmail" src="logocorreo.svg" alt="email">
+                  </picture>
+                </div>
+                <div width="100%" height="2px;">
+
+                </div>
+                <p class="pContacto">Escribe a <a href="mailto:guillesoriano96@gmail.com">guillesoriano96@gmail.com</a></p>
+                <div class="">
+                  <img class="logotlf" src="logotlf.svg" alt="logoEmail">
+                </div>
+
+                <p class="pContacto">Llama al <a href="tel:555-123-123">555-123-123</a></p>
+
+            </div>
+          </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
