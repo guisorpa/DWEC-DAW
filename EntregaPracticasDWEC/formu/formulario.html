@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U4 Práctica 2: Formulario</title>
+    <link rel="stylesheet" href="css/estiloEjFormulario.css">
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    onload = function(e){
+        function focoOn(e){
+          e.target.style.outline = "purple solid 1px"
+        }
+        function focoOff(e){
+          e.target.style.outline = "none";
+        }
+        nombre.onfocus = focoOn;
+        nombre.onblur = focoOff;
+        apellidos.onfocus = focoOn;
+        apellidos.onblur = focoOff;
+        email.onfocus = focoOn;
+        email.onblur = focoOff;
+        emailRepe.onfocus = focoOn;
+        emailRepe.onblur = focoOff;
+        dni.onfocus = focoOn;
+        dni.onblur = focoOff;
+        fecha.onfocus = focoOn;
+        fecha.onblur = focoOff;
+        selector.onfocus = focoOn;
+        selector.onblur = focoOff;
+      var form = document.forms[0];
+      form.onsubmit = function(e){
+
+        var name = nombre.value;
+        var err = document.getElementsByClassName('errores')[0];
+        var mensajeError ="";
+        var devolver = true;
+        if(name.length == null || !(/^\S+$/.test(name))){
+          mensajeError += "El nombre es incorrecto <br>";
+          devolver =false;
+        }
+
+        var ape = apellidos.value;
+        if(ape.length == null || !(/^\S+[\s?\S+]*$/.test(apellidos))){
+          mensajeError += "El apellido es incorrecto <br>";
+          devolver =false;
+        }
+
+        var correo = email.value;
+        if(!/^\w+@\w+\.\w+$/.test(correo) || correo.length == null){
+          mensajeError += "El email es incorrecto <br>";
+          devolver =false;
+        }
+
+        var correo2 = emailRepe.value;
+        if(correo != correo2){
+          mensajeError += "El email repetido es incorrecto <br>";
+          devolver =false;
+        }
+
+        var iden = dni.value;
+        if(!(/^\d{8}[A-Z]$/.test(iden))) {
+          mensajeError += "El DNI es incorrecto <br>";
+          devolver =false;
+        }
+
+        var nacimiento = fecha.value.split("-");
+
+        var year = nacimiento[0];
+        var month = nacimiento[1];
+        var day = nacimiento[2];
+
+        var feNacimiento = new Date(year, month, day);
+        var actual = new Date();
+        var edad = actual.getFullYear()-year-1;
+        if((actual.getUTCDate()-day) >=0){
+          edad++;
+        }
+        if(actual.getMonth()+1-month>0){
+          edad++;
+        }
+        if ( isNaN(feNacimiento) || day < 1 || day > 31 || month < 1 || month > 12 || year < 0 || year >= actual.getFullYear()){
+          mensajeError += "La fecha es incorrecta <br/>"
+          devolver =false;
+        }else if (edad < 18){
+          mensajeError += "No eres mayor de edad, no te puedes registrar. <br/>"
+          devolver =false;
+        }
+
+        var seccion =selector.selectedIndex;
+        if (seccion == null || seccion == 0){
+            mensajeError += "No has seleccionado tu Sección favorita, seleccionala por favor. <br/>";
+            devolver = false;
+        }
+        for(var i = 0; i<= document.getElementsByName('pago'); i++){
+          var pagar = document.getElementsByName('pago')[i].value;
+          console.log(pagar);
+          if (pagar != "tarjeta" && pagar != "efectivo"){
+            devolver = false;
+            mensajeError += "Indique método de pago<br/>";
+          }
+        }
+
+        if(!cond.checked){
+          devolver = false;
+          mensajeError += "No has chequeado <br>";
+        }
+
+        if (devolver){
+          mensajeError = "Tu petición se ha enviado correctamente";
+          err.style.color="blue";
+          formulario.action =document.getElementById('selector').value + ".html";
+
+           form.submit();
+           document.getElementById("enviar").value = "Enviando...";
+           document.getElementById("enviar").disabled = true;
+        }else{
+          err.style.color="red";
+        }
+          err.innerHTML = mensajeError;
+          return devolver;
+      }
+    }
+
+    </script>
+    <form id="formulario" action="#" method="post" enctype="application/x-www-urlencoded">
+    <!--Zona info personal-->
+    <h1>Formulario alta</h1>
+    <fieldset>
+    <legend>Información personal</legend>
+    <div>
+    <label for="nombre">Nombre*:</label>
+    <input type="text" name="nombre" id="nombre" autofocus="autofocus" placeholder="Introduce el nombre..."></input>
+    </div>
+
+    <div>
+    <label for="apellidos">Apellidos*:</label>
+    <input type="text" name="apellidos" id="apellidos"></input>
+    </div>
+
+    <div>
+    <label for="email">Email*:</label>
+    <input type="email" name="email" id="email"></input>
+    </div>
+
+    <div>
+    <label for="email">Repetir email*:</label>
+    <input type="email" name="email" id="emailRepe"></input>
+    </div>
+
+    <div>
+    <label for="dni">DNI:</label>
+    <input type="text" name="dni" id="dni"></input>
+    </div>
+
+    <div id="inputFecha">
+    <label for="fecha">Fecha nacimiento*:</label>
+    <input type="date" name="fecha" id="fecha"></input>
+    </div>
+
+    <div id="seccion">
+    <label for="selector">Sección favorita*:</label>
+    <select name="seccion" id="selector">
+    <option value="0">Escoge una sección </option>
+    <option value="discos">Discos</option>
+    <option value="libros">Libros</option>
+    <option value="tecnologia">Tecnología</option>
+    </select>
+    </div>
+    <div>
+      <p>Modo preferente de pago*:</p>
+    </div>
+    <div id="radio">
+      <label for="efectivo">Efectivo
+      <input type="radio" name="pago" id="efectivo" value="efectivo"></input>
+      </label>
+      <label for="tarjeta">Tarjeta
+      <input type="radio" name="pago" id="tarjeta" value="tarjeta"></input>
+      </label>
+    </div>
+
+    </fieldset>
+
+    <!--Zona checks y aceptar-->
+    <label class="check">
+    <input type="checkbox" name="cond" id="cond"></input>
+    <p> Acepto las condiciones de alta</p>
+    </label>
+
+    <input type="submit" value="Enviar" id="enviar"></input>
+
+    <div id="nota">Nota: los campos marcados con "*" son obligatorios</div>
+
+    <!-- Incluyo un div vacío para poner los errores del formulario -->
+    <div class="errores"></div>
+    </form>
+
+  </body>
+</html>
