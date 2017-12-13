@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U4 Práctica 2: Formulario</title>
+    <link rel="stylesheet" href="css/estiloEjFormulario.css">
+  </head>
+  <body>
+    <form id="formulario" action="#" method="post" enctype="application/x-www-urlencoded">
+    <!--Zona info personal-->
+    <h1>Formulario alta</h1>
+    <fieldset>
+    <legend>Información personal</legend>
+    <div>
+    <label for="nombre">Nombre*:</label>
+    <input type="text" name="nombre" id="nombre" autofocus="autofocus" placeholder="Introduce el nombre..."></input>
+    </div>
+
+    <div>
+    <label for="apellidos">Apellidos*:</label>
+    <input type="text" name="apellidos" id="apellidos"></input>
+    </div>
+
+    <div>
+    <label for="email">Email*:</label>
+    <input type="email" name="email" id="email"></input>
+    </div>
+
+    <div>
+    <label for="email">Repetir email*:</label>
+    <input type="email" name="email" id="emailRepe"></input>
+    </div>
+
+    <div>
+    <label for="dni">DNI:</label>
+    <input type="text" name="dni" id="dni"></input>
+    </div>
+
+    <div id="inputFecha">
+    <label for="fecha">Fecha nacimiento*:</label>
+    <input type="date" name="fecha" id="fecha"></input>
+    </div>
+
+    <div id="seccion">
+    <label for="selector">Sección favorita*:</label>
+    <select name="seccion" id="selector">
+    <option value="0">Escoge una sección </option>
+    <option value="discos">Discos</option>
+    <option value="libros">Libros</option>
+    <option value="tecnologia">Tecnología</option>
+    </select>
+    </div>
+    <div>
+      <p>Modo preferente de pago*:</p>
+    </div>
+    <div id="radio">
+      <label for="efectivo">Efectivo
+      <input type="radio" name="pago" id="efectivo" value="efectivo"></input>
+      </label>
+      <label for="tarjeta">Tarjeta
+      <input type="radio" name="pago" id="tarjeta" value="tarjeta"></input>
+      </label>
+    </div>
+
+    </fieldset>
+
+    <!--Zona checks y aceptar-->
+    <label class="check">
+    <input type="checkbox" name="cond" id="cond"></input>
+    <p> Acepto las condiciones de alta</p>
+    </label>
+
+    <input type="submit" value="Enviar" id="enviar"></input>
+
+    <div id="nota">Nota: los campos marcados con "*" son obligatorios</div>
+
+    <!-- Incluyo un div vacío para poner los errores del formulario -->
+    <div class="errores"></div>
+    </form>
+    <script type="text/javascript">
+      onload = function(e){
+        e.preventDefault();
+        var form = document.forms[0];
+        form.onsubmit = function(e){
+
+          var noNulo=true;
+          var mensajeError = "";
+          if(nombre.value == ""){
+            noNulo = false;
+            mensajeError += "Te falta el nombre.  <br>";
+          }
+          if(apellidos.value == ""){
+            noNulo = false;
+            mensajeError += "Te falta el apellido.  <br>";
+          }
+          if( email.value == ""){
+            noNulo = false;
+            mensajeError += "Te falta el email.  <br>";
+          }
+          if(emailRepe.value == ""){
+            noNulo = false;
+            mensajeError += "Te falta repetir el email.  <br>";
+          }
+          if(dni.value == ""){
+            noNulo = false;
+            mensajeError += "Te falta el dni.  <br>";
+          }
+
+          if(selector.selectedIndex == 0){
+            noNulo = false;
+            mensajeError += "Te falta elegir campo. <br>";
+          }
+          if( !cond.checked){
+            noNulo = false;
+            mensajeError += "No has chequeado.  <br>";
+          }
+
+          if(fecha.value == ""){
+            noNulo = false;
+            mensajeError += "Te falta la fecha.  <br>";
+          }
+          var pagar ="";
+          for(var i = 0; i<= document.getElementsByName('pago'); i++){
+             pagar = document.getElementsByName('pago')[i].value;
+            console.log(pagar);
+            if (pagar != "efectivo"){
+              noNulo = false;
+              mensajeError += "Te falta poner método de pago. <br>";
+            }
+            if(pagar != "tarjeta"){
+              noNulo = false;
+              mensajeError += "Te falta poner método de pago. <br>";
+            }
+          }
+          if(noNulo){
+
+            document.cookie = "nombre=" + nombre.value + ";max-age:3600*24*360;path=/";
+            document.cookie = "apellidos=" + apellidos.value + ";max-age:3600*24*360;path=/";
+            window.localStorage.email =  email.value;
+            window.sessionStorage.dni = dni.value;
+            formulario.action ="alta.html";
+             form.submit();
+
+          }else{
+            var err = document.getElementsByClassName('errores')[0];
+            err.innerHTML = mensajeError;
+
+          }
+          return noNulo;
+        }
+      }
+    </script>
+  </body>
+</html>

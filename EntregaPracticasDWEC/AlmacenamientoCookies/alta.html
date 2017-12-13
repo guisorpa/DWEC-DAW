@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>alta</title>
+    <script type="text/javascript">
+    onload = function(){
+      function leerCookie(nombre) {
+           var lista = document.cookie.split(";");
+           for (i in lista) {
+               var busca = lista[i].search(nombre);
+               if (busca > -1) { var micookie=lista[i]}
+               }
+           var igual = micookie.indexOf("=");
+           var valor = micookie.substring(igual+1);
+           return valor;
+         }
+         var valor = leerCookie("nombre");
+
+         var valorApe = leerCookie("apellidos");
+
+         var dni = sessionStorage.getItem("dni");
+         var email = localStorage.getItem("email");
+          // var cookie = document.cookie;
+          // var todos = cookie.split(";");
+          // var nombreComple = todos[0];
+          // var igual = todos.indexof("=");
+          // var valor =todos.substring(igual+1);
+            var linea = document.getElementsByClassName('bienve')[0];
+          ea.innerHTML = "Lea atentamente Señor " + valorApe;
+          linea.innerHTML ="Queremos recordarle señor " + valor +" "+ valorApe + ", con dni: "+ dni + " que ha obtenido la magnífica noticia de que va a ser padre. Por favor, mandanos desde tu correo (" + email + ") si aceptas al tu hijo o no. <br> Los abogados de su pareja.";
+
+    }
+
+    </script>
+  </head>
+  <body>
+    <h1 id="ea">Bienvenido!</h1>
+    <div  class="bienve"></div>
+
+  </body>
+</html>
