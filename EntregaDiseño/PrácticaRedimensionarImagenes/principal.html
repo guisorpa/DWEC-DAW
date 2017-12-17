@@ -26,7 +26,7 @@
       font-family: 'Volkhov',serif;
       text-align: center;
       align-items: center;
-
+      background-color: linen;
     }
 
     img{
@@ -34,10 +34,16 @@
     }
     .cabecera{
       height:100px;
-      padding: 5px 10px;
+      /* padding: 5px 10px;
+      padding-left:10px;
+      padding-right: 15px; */
+      margin:0px;
       display: table;
-      margin:inherit;
+
       height: 20%;
+      background-color: lightgrey;
+      width: 100%;
+      border-radius:5px;
     }
     .titulo{
       display: table-cell;
@@ -228,9 +234,7 @@
       <div class="row">
         <div class="cabecera col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <picture>
-              <!-- <source media="(min-width: 1200px)" srcset="logo.svg">
-              <source media="(min-width: 768px)" srcset="logo.svg">
-              <source media="(min-width: 0px)" srcset="logo.svg"> -->
+
 
               <img class="logo" src="logo.svg" alt="imagen">
             </picture>
@@ -240,11 +244,19 @@
 
         <div class="row">
           <div class="cuerpo col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <img class="fotoGrande" src="maiz.jpg" alt="fotoGrande">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="maiz.jpg">
+              <source media="(min-width: 768px)" srcset="maiz2.jpg">
+              <source media="(min-width: 575px)" srcset="maiz3.jpg">
+
+              <img class="fotoGrande" src="maiz.jpg" alt="fotoGrande">
+            </picture>
+
             <div class="txt">
                Food & Company, fundada en 1555 por el general Kentucky, es una súper cadena de restaurantes de pan con patatas. Nuestros campos de trigo son cuidados
                por monjes, los cuáles hacen que brillen y luzcan como verdaderas estrellas. Nuestras patatas son cultivadas en tierras
                vírgenes y mimadas como lo haría tu abuela. Prueba a pedir nuestro Pan with potato chips, es delicioso y bajo en grasa!
+
 
             </div>
           </div>
@@ -264,9 +276,7 @@
                 <p class="formal"><h2>Contacta con nosotros</h2></p>
                 <div >
                   <picture>
-                    <source media="(min-width: XXXpx)" srcset="imagen/grande.png">
-                    <source media="(min-width: XXXpx)" srcset="imagen/mediano.png">
-                    <source media="(min-width: XXXpx)" srcset="imagen/pequeño.png">
+
                                <!-- img para cargar la imagen del elemento source -->
                     <img class="logoEmail" src="logocorreo.svg" alt="email">
                   </picture>

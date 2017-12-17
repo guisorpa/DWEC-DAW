@@ -9,12 +9,13 @@
     <script type="text/javascript">
 
     onload = function(e){
-        function focoOn(e){
-          e.target.style.outline = "purple solid 1px"
+        function focoOn(e){          
+          e.target.style.outline = "purple solid 1px";
         }
         function focoOff(e){
           e.target.style.outline = "none";
         }
+
         nombre.onfocus = focoOn;
         nombre.onblur = focoOff;
         apellidos.onfocus = focoOn;
