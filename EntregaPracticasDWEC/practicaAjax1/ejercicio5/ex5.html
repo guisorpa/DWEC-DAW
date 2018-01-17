@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Noticias con jquery</title>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+          var num = Math.floor((Math.random()*4)+1);
+          $("div#resultado").load("noticia" + num + ".txt");
+      });
+    </script>
+
+  </head>
+  <body>
+    <h1>Noticias con Jquery y ajax.</h1>
+    <div id="resultado">
+
+    </div>
+  </body>
+</html>

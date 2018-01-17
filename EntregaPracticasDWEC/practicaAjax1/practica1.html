@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+    onload=function(){
+      if(window.XMLHttpRequest){
+        var xhr =  new XMLHttpRequest();
+        var xhr2 =  new XMLHttpRequest();
+      }else if(ActiveXObject("Microsoft.XMLHTTP")){
+        var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        var xhr2 =  new ActiveXObject("Microsoft.XMLHTTP");
+      }
+
+
+        var num = Math.floor((Math.random()*4)+1);
+
+        var url = "noticia" + num + ".txt";
+        xhr.open("get", url, true);
+        xhr.onreadystatechange = muestraResultado;
+        xhr.send();
+
+
+      function muestraResultado(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+          noticias.innerHTML = xhr.responseText;
+
+        }else if(xhr.status != 200 && xhr.readyState == 4){
+          alert(xhr.statusText);
+        }
+        estado();
+        peticion();
+        cabe();
+      }
+      function cabe(){
+        cabeceras.innerHTML = xhr.getAllResponseHeaders();
+      }
+      function peticion(){
+        peti.innerHTML = xhr.readyState;
+      }
+      function estado(){
+        codEstado.innerHTML = xhr.status;
+      }
+
+
+      nombre.onkeyup = function(){
+
+          var sugerencia = nombre.value;
+
+          xhr2.open("GET","sugerencias.php?q=" + sugerencia, true);
+          xhr2.onreadystatechange = function(){
+            if (xhr2.readyState == 4 && xhr2.status == 200){
+              suge.innerHTML = xhr2.responseText;
+            }
+          }
+          xhr2.send();
+        }
+    }
+    </script>
+  </head>
+  <style media="screen">
+    *{
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h1>Noticias</h1>
+    <p id="noticias"></p>
+    <!--Ex 2  -->
+    <hr>
+    <div id="peti"></div>
+    <hr>
+    <div id="codEstado"></div>
+    <hr>
+    <div id="cabeceras"></div>
+    <hr>
+    <form method="GET">
+      Introduce un nombre<input type="text" id="nombre">
+      <p>Ejemplo: <span id="suge"></span></p>
+    </form>
+    <hr>
+  </body>
+</html>

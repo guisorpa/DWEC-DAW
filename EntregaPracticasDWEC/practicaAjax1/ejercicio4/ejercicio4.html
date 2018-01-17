@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      onload = function(){
+        var xhr =  new XMLHttpRequest();
+        document.forms[0].onsubmit = function(e){
+            e.preventDefault();
+            var url = "LoginJSON.php";
+            xhr.open("post", url, true);
+            xhr.onreadystatechange = muestraResultado;
+            function muestraResultado(){
+              if(xhr.readyState == 4 && xhr.status == 200){
+                var respon = xhr.responseText;
+                console.log(xhr.responseText);
+
+                var objetoTransformado = JSON.parse(xhr.responseText);
+                console.log(objetoTransformado);
+                var respuesta = objetoTransformado.res;
+                console.log(respuesta);
+                if (respuesta){
+                  document.forms[0].action = "homelogado.html";
+                  var toke = objetoTransformado.token;
+                  window.localStorage.token =  toke;
+                  document.forms[0].submit();
+                }else{
+                  alert("Error");
+                }
+
+              } else if(xhr.readyState == 4){
+                alert("Se ha producido un error al obtener los datos"
+                + "\n\nreadyState:" + xhr.readyState
+                + "\nstatus: " + xhr.status
+                + "\nheaders: " + xhr.getAllResponseHeaders());
+              }
+
+            }
+            function obtenDatosLogin(){
+              var us = document.getElementById("usuario").value;
+              var pass = document.getElementById("password").value;
+              var strLogin = "usuario=" + encodeURIComponent(us) + "&password=" + encodeURIComponent(pass);
+              console.log(strLogin);
+              return strLogin;
+            }
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            var datosLogin = obtenDatosLogin();
+            xhr.send(datosLogin);
+
+
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form method="post" action="#">
+      Introduce tu usuario <input type="text" id="usuario"> <br>
+      Introduce tu contraseña <input type="text" id="password"><br>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="resLogin">
+
+    </div>
+  </body>
+</html>
