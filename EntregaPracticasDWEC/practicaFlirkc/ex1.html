@@ -6,7 +6,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("button").click(function(){
-				imagenes.innerHTML = "";
+				$("#imagenes").empty();
 				var conta = 0;
 				while(conta<10){
 					var gifs = document.createElement("img");
@@ -24,7 +24,7 @@
 					if(st =="success"){
 						var arrFotos = data.items;
 						var cuen = 0;
-						imagenes.innerHTML = "";
+						$("#imagenes").empty();
 						$.each(arrFotos, function(i, item){
 							if(cuen<10){
 								var foto = item.media.m
