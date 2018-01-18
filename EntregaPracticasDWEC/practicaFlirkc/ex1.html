@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Practica flickr ex1</title>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function(){
+				imagenes.innerHTML = "";
+				var conta = 0;
+				while(conta<10){
+					var gifs = document.createElement("img");
+					gifs.setAttribute("src","carga.gif");
+					gifs.style.width = "100px";
+					gifs.style.height = "100px";
+					imagenes.appendChild(gifs);
+					conta++;
+				}
+
+				var valor = $("#selector").val();
+				var url = "https://www.flickr.com/services/feeds/photos_public.gne?tags=";
+				url += valor + "&format=json&jsoncallback=?";
+				$.getJSON(url, function(data,st,xhr){
+					if(st =="success"){
+						var arrFotos = data.items;
+						var cuen = 0;
+						imagenes.innerHTML = "";
+						$.each(arrFotos, function(i, item){
+							if(cuen<10){
+								var foto = item.media.m
+								var imagen = document.createElement("img");
+								imagen.setAttribute("src",foto);
+								imagen.style.width = "100px";
+								imagen.style.height = "100px";
+								imagenes.appendChild(imagen);
+								cuen++;
+							}
+						});
+					}else{
+						console.log(xhr.status);
+					}
+				});
+		});
+	});
+</script>
+</head>
+<body>
+  <h1>Mi flickr</h1>
+  <div id="imagenes">
+  </div>
+	<button>Dibujar</button>
+  <select id="selector">
+    <option value="landscape">Paisajes</option>
+    <option value="puppys">Cachorros</option>
+    <option value="dog">Perritos</option>
+    <option value="cat">Gatos</option>
+    <option value="iguana">Iguana</option>
+		<option value="icons">Iconos</option>
+		<option value="party">Fiesta</option>
+  </select>
+</body>
+</html>
