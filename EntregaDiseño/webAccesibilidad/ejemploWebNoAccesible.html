@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    *{
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+    }
+    html, body{
+      height: 100%;
+    }
+    body{
+      text-align: center;
+      display:flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: lightsalmon;
+    }
+    header{
+      background-color: lightblue;
+      display: table;
+      width: 100%;
+      position: fixed;
+      z-index: 100;
+    }
+    .logo{
+      display: table-cell;
+      vertical-align: middle;
+      width: 100px;
+    }
+    h1{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: left;
+      color:steelblue;
+    }
+    .logo > img{
+      margin: 10px;
+    }
+    .container{
+      padding-top: 150px;
+      flex:1;
+    }
+    nav{
+      background-color: grey;
+      width: 100%;
+    }
+    nav ul > li{
+      display: inline-block;
+      padding: 10px;
+    }
+    footer{
+      background-color: lightblue;
+      height: 50px;
+    }
+    table,td{
+      border-collapse: collapse;
+      text-align: center;
+      border: solid black;
+    }
+    .container div{
+      width: 75%;
+      margin: auto;
+      text-align: left;
+      margin-bottom: 30px;
+      margin-top: 20px;
+    }
+    .container img{
+      width: 70%;
+      height: auto;
+      margin: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="corporativo">
+        <div class="logo">
+          <img src="https://factoryfy.es/wp-content/uploads/diseno-logotipo-agencia-viajes-avion.jpg" width="80">
+        </div>
+        <h1>Viajaja. Organizamos tu ocio</h1>
+      </div>
+      <div class="menu">
+        <nav>
+          <ul>
+            <li><a href="#">Actividades semanales</a></li>
+            <li><a href="#">Propuestas populares</a></li>
+            <li><a href="#">Contacta</a></li>
+            <li><a href="#">Páginas amigas</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <h3>Esta semana te proponemos estas actividades</h3>
+      <p>En esta página todo el mundo habla muy raro...</p>
+      <div class="actividad1">
+        <h4>Clases de conversación de latin</h4>
+        <p>Lorem ipsum <b>dolor</b> sit amet, consectetur adipisicing <i>elit</i>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est <b>laborum</b>.</p>
+        <br>
+        <p>Podrás traducir el párrafo anterior y tal y como ves en la infografía, hablarás una lengua que sólo se habla en misa.</p>
+        <img src="https://trabajarporelmundo.org/wp-content/uploads/2015/08/infografia-lenguas-m%C3%A1s-hablada.jpg" alt="infografia">
+      </div>
+      <div class="actividad2">
+        <h4>Visita Florencia</h4>
+        <p>Penso che un sogno così non ritorni mai più, mi dipingevo le mani e la faccia di blu, poi d'improvviso venivo dal vento rapito, e incominciavo a volare nel cielo infinito. Volare oh oh cantare oh oh oh oh, nel blu dipinto di blu, felice di stare lassù, e volavo ...</p>
+        <img src="https://www.101viajes.com/sites/default/files/ponte-vecchio-guia.jpg">
+        <p>Si te interesa, consulta la tabla o pulsa en este <a href="https://www.101viajes.com/florencia/guia-turismo-viaje-florencia">enlace</a></p>
+        <table>
+          <tr>
+            <td>Duración del viaje</td>
+            <td>Coste por día</td>
+            <td>Coste total</td>
+          </tr>
+          <tr>
+            <td>3 días</td>
+            <td>80€</td>
+            <td>400€</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <footer>
+      <hr>
+      <p>Esto es el pie</p>
+    </footer>
+  </body>
+</html>
