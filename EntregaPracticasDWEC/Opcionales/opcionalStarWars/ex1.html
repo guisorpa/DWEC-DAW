@@ -28,6 +28,12 @@
           console.log(url);
           $.getJSON(url, function(data,st,xhr){
             console.log(data);
+            $("#car").empty();
+            var gifs = document.createElement("img");
+  					gifs.setAttribute("src","ajax-loader.gif");
+  					gifs.style.width = "300px";
+  					gifs.style.height = "100px";
+  					car.appendChild(gifs);
             if(st =="success"){
               var arrayStar = data.items;
               var ulu = document.createElement("ul");
