@@ -12,6 +12,13 @@ html {
 body {
 	margin: 10px;
 }
+table{
+	margin:auto;
+}
+table, tr, th, td{
+	border: 1px solid black;
+
+}
 
 h1 {
 	font-size: 1.6em;
@@ -136,4 +143,12 @@ img{
 .oculta {
   position: absolute;
   top: -5000px;
+}
+.torti{
+	margin:auto;
+	width:400px;
+}
+.foto{
+	width: 400px;
+	padding: 10px;
 }
